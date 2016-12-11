@@ -71,12 +71,16 @@ The user starts at this screen, ready to take attendance!<br>
 <p>Sessions can be switched via drop down menu.</p>
 <img src="UI-Layout/CameraResized.png" alt="Camera" style="width:216px;height:384px;">
 <p>When the user is ready to take attendence, they will use the camera.</p>
-<h5>Event Diagram</h5>
 
 </p>
 
 <h4><u>Components and Events</u></h4>
 <p>
+
+From the start screen, the user can create tables for a class by entering student&#8217;s names as well as name of the class, and start and end times of the class.<br>The data tables will be created with SQLite, and when student attendance information is needed, a query to the SQLite database will be sent.<br>
+    By selecting the <q>Camera</q> option at the bottom of the screen the app will connect to the camera on the phone, it will also use the QR reader feature built into the app.<br>By taking pictures of a given QR code, a query will be sent to SQLite, the QR code , which will be the unique key will be matched to the corresponding student in the data table.<br>The app will then merge this with another table containing the attendance data and update the attendance data for that student. 
+
+
  </p>
 
 <h4><u>Data Schema</u></h4>
@@ -128,5 +132,12 @@ Data is at the center of this project. The main goal of the app is to save atten
 
 <h4><u>Description of Research Topic</u></h4>
 
+<p>
+<h5>Description of Topic</h5>
+Our Topics concern image recognition, Android&#8217;s Camera feature and SQLite.
+<h5>Description of your research plan</h5>
+Our research plan is as follows... 
+<h5>Research Scope</h5>
+</p>
 </body>
 </html>
