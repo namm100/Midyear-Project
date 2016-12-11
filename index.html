@@ -21,6 +21,17 @@ h4 {
 h5 {
 	color: brown;
 }
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	border: 3px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
 </style>
 </head>
 <body>
@@ -69,7 +80,51 @@ The user starts at this screen, ready to take attendance!<br>
  </p>
 
 <h4><u>Data Schema</u></h4>
-<p> </p>
+<p> 
+
+<h5>Database Design Table/Structure</h5>
+<p>
+Data is at the center of this project. The main goal of the app is to save attendance records, which will be done using SQL tables. <br>Each class/extracurricular activity will have the names of each student saved in a table, along with the image that corresponds to them.<br> All together, the fields in the tables will be <q>Name,</q> <q>Picture Code</q> and then a series of dates, each date being each day the user takes attendance.<br> Each new date field is generated every time the user takes attendance. The name of each table will be Attendance_Class, with the name in <q>class</q> being the name the user enters when entering a new class.<br> Each table will be dynamic, meaning that it will be edit and updated often. It will be edited each time a user takes attendance.<br> When a user takes attendance, a new column will be added to the table (with the date of attendance being taken) and the boxes in that column will each have OnTime, Late, or Absent in them if the student is present.<br> This entire table will also be visible to the user after each attendance session, so that the user can see which students were present and which were absent.<br> The main key, which will be used to search the table for entries, will be the student&#8217;s name (both first and last name will be in a single column).<br> This key will be used to find students and either report their specific attendance or delete them, in the case that they are removed from the class.<br> The <q>picture code</q> column will be used sort of as a key as well (although it is not the official key) during the attendance taking, as the app will search for a <q>picture code</q> that is the same as the student&#8217;s code that is being scanned. A sample of how a table in the app will look is below. 
+
+</p>
+<table>
+	<tr>
+		<th>Name(Varchar)</th>
+		<th>Picture Code(Varchar)</th>
+		<th>12/7/16(Enum)</th>
+		<th>12/8/16(Enum)</th>
+		<th>12/9/16(Enum)</th>
+	</tr>
+	<tr>
+		<th>Harrison Giovannelli</th>
+		<th> </th>
+		<th>OnTime</th>
+		<th>Absent</th>
+		<th>OnTime</th>
+	<tr>
+		<th>Nam Mannucci</th>
+		<th> </th>
+		<th>Absent</th>
+		<th>Absent</th>
+		<th>Absent</th>
+	</tr>
+	<tr>
+		<th>Nick Luong</th>
+		<th> </th>
+		<th>Absent</th>
+		<th>Late</th>
+		<th>Late</th>
+	</tr>
+	<tr>
+		<th>Alex Mazon</th>
+		<th> </th>
+		<th>OnTime</th>	
+		<th>Late</th>
+		<th>OnTime</th>
+	</tr>
+</table>
+
+</p>
 
 <h4><u>Description of Research Topic</u></h4>
 
