@@ -1,4 +1,4 @@
 #Midyear-Project
-Pictendance
+Pictendance<br>
 Ms. Qiu's App Development Class 2016-2017
 Nam, Nick, Harrison and Alex.
