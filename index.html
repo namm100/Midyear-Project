@@ -61,6 +61,7 @@ so the teacher can take care of submitting the forms at the end of the day.<br>
 With the extra time, teachers can get back to doing what really matters, teaching!
 </p>
 
+
 <h4><u>User Interfaces</u></h4>
 <h5>UI Navigation diagram</h5>
 <p>
@@ -148,5 +149,65 @@ Code.tutsplus.com has interesting tutorials on Mobile Vision so we will be using
 <h5>Research Scope</h5>
 The scope of our project isn&#8217;t far at all. We will be using basic things like SQLlite<p>Surface Views, Spinners, Clocks, Intents and other basic android content.<br> Although if we had to define one thing that could go wrong is the image recognition, which is the main focus of our research. <br>
 </p>
+<table>
+	<tr>
+		<th> Component </th>
+		<th> Scenario </th>
+		<th> Scenario Description </th>
+		<th> Event or Process by Design </th>
+		<th> Expected Result</th>
+	</tr>
+	<tr>
+		<th> Use Camera </th>
+		<th> 0.1 </th>
+		<th> Camera Takes a picture of the QR code and its readable </th>
+		<th> Retrieves Student from Database with the assigned QR code. Checks the time to see if person is within the time limit </th>
+		<th> Will receive a present or late depending on when he sends it in </th>
+	</tr>
+	<tr>
+		<th> Use Camera </th>
+		<th> 0.2 </th>
+		<th> Camera Takes a picture of something unreadable or QR Code isn’t legit </th>
+		<th> Returns an error and will ask to re-take a picture </th>
+		<th> Ask to retake a picture </th>
+	</tr>
+	<tr>
+		<th> Create New Session (Class roster) </th>
+		<th> 1.1 </th>
+		<th> Returns error, asks to enter name for class </th>
+		<th> Ask to enter Class name </th>
+	</tr>
+	<tr>
+		<th> Create New Session (Class roster) </th>
+		<th> 1.2 </th>
+		<th> Class isn’t given name </th>
+		<th> Returns error, asks to enter name for class </th>
+		<th> Ask to enter Class name
+	</tr>
+	<tr>
+		<th> Create New Session (Class roster) </th>
+		<th> 1.3 </th>
+		<th> No student objects added to class roster </th>
+		<th> Returns an error, asks to enter at least one student object </th>
+		<th> Ask to enter at least one student object </th>
+	</tr>
+	<tr>
+		<th> Create New Session (Class roster) </th>
+		<th> 1.4 </th>
+		<th> User tries to view a class that does not exist </th>
+		<th> App searches for class in data tables.If table does not exist, app does not return a table and sends user a message </th>
+		<th> App returns a message telling the user that the requested class does not exist. </th>
+	</tr>
+	<tr>
+		<th> Create New Session (Class roster) </th>
+		<th> 1.5 </th>
+		<th> User tries to create a class with a name that already exists </th>
+		<th> App searches for class in data tables. If table with the same class name exists, app does not create a table and sends the user a message </th>
+		<th> App returns a message telling the user that the class they tried to create already has an attendance file. </th>
+	</tr>
+	
+	
+</table>
+
 </body>
 </html>
