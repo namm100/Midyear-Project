@@ -209,8 +209,43 @@ The scope of our project isn&#8217;t far at all. We will be using basic things l
 		<th> App searches for class in data tables. If table with the same class name exists, app does not create a table and sends the user a message </th>
 		<th> App returns a message telling the user that the class they tried to create already has an attendance file. </th>
 	</tr>
-	
-	
+	<tr>
+		<th> Check list of Attendance </th>
+		<th> 2.1 </th>
+		<th> Doesn’t show the list </th>
+		<th> Returns an error, will say that Session doesn’t exist or is empty </th>
+		<th> Ask the user to create a session </th>
+	</tr>
+	<tr>
+		<th> Check list of Attendance </th>
+		<th> 2.2 </th>
+		<th> Shows the wrong list </th>
+		<th> Will show a different list from what the user wanted </th>
+		<th> Allow user to edit the database </th>
+	</tr>	
+	<tr>
+		<th> Check list of Attendance </th>
+		<th> 2.3 </th>
+		<th> Loads the list from SQL and everything is fine </th>
+		<th> Will show a different list from what the user wanted </th>
+		<th> Everything is fine </th>
+	</tr>	
+	<tr>
+		<th> Editing students (deleting/ adding students to classes) </th>
+		<th> 3.1 </th>
+		<th> User tries to add a name that already exists in the class </th>
+		<th> App searches for student in the class using name key. If student already exists, app does not add student and sends a message  </th>
+		<th> App tells user to add student with different name (i.e. add a middle name) and allows the user to try again </th>
+	</tr>
+	<tr>
+		<th> Editing students (deleting/ adding students to classes) </th>
+		<th> 3.2 </th>
+		<th> User tries to delete a student that does not exist </th>
+		<th> App searches for student in the class using name key. If student does not exist, app does not delete any students and sends a message to the user</th>
+		<th> App returns a message telling the user that the requested student does not exist.  </th>
+	</tr>
+															 
+
 </table>
 
 </body>
