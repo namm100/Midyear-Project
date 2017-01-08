@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.app.AlertDialog.Builder;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void showMessage(String title,String message)
     {
-        Builder builder=new Builder(this);
+        Builder builder= new Builder(this);
         builder.setCancelable(true);
         builder.setTitle(title);
         builder.setMessage(message);
