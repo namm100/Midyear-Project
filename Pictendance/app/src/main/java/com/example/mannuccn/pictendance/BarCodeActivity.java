@@ -20,8 +20,6 @@ import android.widget.Toast;
 
 import com.google.zxing.Result;
 
-import org.w3c.dom.Text;
-
 import java.util.Calendar;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
@@ -71,6 +69,10 @@ public class BarCodeActivity extends AppCompatActivity implements ZXingScannerVi
         classSelected = "";
         hour = -1; minute = -1;
         date = "";
+
+        selectClassET.setText("");
+        dateET.setText("");
+        timeET.setText("");
     }
 
 
@@ -95,6 +97,7 @@ public class BarCodeActivity extends AppCompatActivity implements ZXingScannerVi
                 classSelected = pendingSelection;
                 showToast(classSelected + " selected.",0);
                 classTV.setText(classSelected);
+                selectClassET.setText("");
             } else {
                 showToast("Class doesn't exist",0);
             }
@@ -120,8 +123,8 @@ public class BarCodeActivity extends AppCompatActivity implements ZXingScannerVi
                 showToast("Date shouldn't just contain numbers",0);
                 return;
             }
+
             this.date = pendingSelection;
-            dateTV.setText(this.date);
 
             Cursor c = db.query(classSelected,null,null,null,null,null,null);
             String[] colNames = c.getColumnNames();
@@ -129,6 +132,9 @@ public class BarCodeActivity extends AppCompatActivity implements ZXingScannerVi
             for (String i: colNames) {
                 if (i.equals(this.date)) {
                     showToast("Info: Date column already made",0);
+
+                    dateTV.setText(this.date);
+                    dateET.setText("");
                     return;
                 }
             }
@@ -138,10 +144,14 @@ public class BarCodeActivity extends AppCompatActivity implements ZXingScannerVi
             } catch (SQLiteException e) {
                 e.printStackTrace();
                 showToast("No SQL reserved words",0);
+                this.date = "";
+                dateTV.setText("");
                 return;
             }
 
+            dateTV.setText(this.date);
             showToast("Successfully added date",0);
+            dateET.setText("");
         }
 
         if (view == setTimeBtn) {
@@ -165,7 +175,8 @@ public class BarCodeActivity extends AppCompatActivity implements ZXingScannerVi
                 showToast("Time Entered",0);
                 this.hour = hoursI;
                 this.minute = minI;
-                timeTV.setText(this.hour + ":" + this.minute);
+                timeTV.setText(this.hour + ":" + ((this.minute==0)?"00":this.minute));
+                timeET.setText("");
             } else {
                 showToast("Error, Enter valid time",0);
             }
@@ -211,6 +222,7 @@ public class BarCodeActivity extends AppCompatActivity implements ZXingScannerVi
             db = openOrCreateDatabase("Pictendance", Context.MODE_PRIVATE, null);
             Cursor c = db.rawQuery("SELECT * FROM " + classSelected + " WHERE osis='" + osis + "';", null);
 
+
             if (c.getCount() == 1) {
                 // TODO: UPDATE TABLE
                 String mark = "";
@@ -229,8 +241,12 @@ public class BarCodeActivity extends AppCompatActivity implements ZXingScannerVi
                 db.execSQL("UPDATE " + classSelected + " SET " + this.date + "='" + mark + "' WHERE osis='" + osis + "';");
                 showToast("Marked " + osis + " as " + mark, 0);
 
+            } else if (c.getCount() == 0) {
+                showToast("Student not found. Please add",0);
+
             } else {
                 showToast("Duplicate OSIS's, please fix using manage class screen",0);
+
             }
         }
 

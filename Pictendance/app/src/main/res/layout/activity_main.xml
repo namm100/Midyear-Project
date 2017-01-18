@@ -12,6 +12,7 @@
     android:background="#ffff00"
     tools:context="com.example.mannuccn.pictendance.MainActivity">
 
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,14 +70,14 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:id="@+id/takeAttendanceBtn"
-        android:layout_toStartOf="@+id/viewBtn"
-        android:layout_toLeftOf="@+id/viewBtn"/>
+        android:layout_toStartOf="@+id/classListBtn"
+        android:layout_toLeftOf="@+id/classListBtn"/>
 
     <Button
-        android:text="View"
+        android:text="Class List"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/viewBtn"
+        android:id="@+id/classListBtn"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -86,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/viewFileBtn"
-        android:layout_above="@+id/viewBtn"
+        android:layout_above="@+id/classListBtn"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="15dp" />
@@ -157,5 +158,17 @@
         android:layout_alignTop="@+id/createClassNameET"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Class Selected:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/selectedClassTV"
+        android:textSize="20sp"
+        android:background="@drawable/border_style2"
+        android:layout_below="@+id/osisET"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp" />
 
 </RelativeLayout>
